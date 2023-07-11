@@ -1,0 +1,42 @@
+.home {
+    display: flex;
+    align-items: center;
+    background: url(../../assets/images/bg.png), lightgray 50% / cover no-repeat;
+}
+.home h1 {
+color: #2D2B2B;
+font-family: Poppins;
+font-size: 41px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.home-desc {
+color: #666565;
+font-family: Poppins;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.home-desc span {
+    color: #1F87F7;
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.home-left {
+    width: 50%;
+    margin-left: 2rem;
+}
+.home-btn {
+    width: 169px;
+height: 41px;
+flex-shrink: 0;
+border-radius: 55px;
+background: #1F87F7;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.31);
+}
