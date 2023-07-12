@@ -1,5 +1,5 @@
-// import FeaturedPro from './FeaturedPro'
-// import LatestPro from './LatestPro'
+import FeaturedPro from './FeaturedPro'
+import LatestPro from './LatestPro'
 import Offers from './Offers'
 import './Styles/Home.css'
 import shop from '../assets/images/shop.png'
@@ -22,10 +22,10 @@ function Home() {
             <img src={shop} alt="shop" />
           </div>
         </div>
-        {/* <FeaturedPro/> */}
+        <FeaturedPro/>
        
         <Offers/>
-        {/* <LatestPro/> */}
+        <LatestPro/>
     </>
   )
 }
