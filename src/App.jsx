@@ -34,7 +34,7 @@ function App() {
           <Route path="/offers" element={<Offers />} />
           <Route path="/latest" element={<LatestPro /> } />
           <Route path="/login" element={<Login /> } />
-          <Route path="/signup" element={<SignUp /> } />
+          <Route path="/signUp" element={<SignUp /> } />
           <Route path="/admin" element={<Admin />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/details" element={<ProductsDetails />} />
