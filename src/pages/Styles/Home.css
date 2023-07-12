@@ -5,7 +5,7 @@
 }
 .home h1 {
 color: #2D2B2B;
-font-family: Poppins;
+font-family: 'Poppins';
 font-size: 41px;
 font-style: normal;
 font-weight: 700;
@@ -13,7 +13,7 @@ line-height: normal;
 }
 .home-desc {
 color: #666565;
-font-family: Poppins;
+font-family: 'Poppins';
 font-size: 17px;
 font-style: normal;
 font-weight: 400;
@@ -22,7 +22,7 @@ line-height: normal;
 
 .home-desc span {
     color: #1F87F7;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-size: 17px;
     font-style: normal;
     font-weight: 700;
