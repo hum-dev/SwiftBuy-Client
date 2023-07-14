@@ -1,73 +1,74 @@
 import './Styles/LProducts.css'
-import img from '../assets/images/handbag.png'
+// import img from '../assets/images/handbag.png'
+import img2 from '../assets/images/converse.png'
 function LatestPro() {
   const products = [
     {
       id: 1,
-      image: img,
+      image: img2,
       name: 'Product 1',
       description: 'Description of Product 1',
       price: '9.99'
     },
     {
       id: 2,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 3,
-      image: 'product2.jpg',
+      image:img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 4,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 5,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 6,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 7,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 8,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 9,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 10,
-      image: 'product2.jpg',
+      image: img2,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'

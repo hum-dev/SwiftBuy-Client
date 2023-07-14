@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-// import MainNav from './components/MainNav'
-import NavHero from './components/NavHero'
+import MainNav from './components/MainNav'
+// import NavHero from './components/NavHero'
 import './App.css'
 import Home from './pages/Home'
 import Footer from './components/Footer'
@@ -26,8 +26,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      {/* <MainNav /> */}
-      <NavHero />
+      <MainNav />
+      {/* <NavHero /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/featured" element={<FeaturedPro />} />

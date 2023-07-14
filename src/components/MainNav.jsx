@@ -3,6 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { IoCartOutline } from 'react-icons/io5' 
 import { CgProfile } from 'react-icons/cg'
 import logo from '../assets/images/swift-buy logo.png'
+import {Link} from 'react-router-dom'
 
 function MainNav() {
   return (
@@ -29,7 +30,7 @@ function MainNav() {
               <a href="/">Contact</a>
             </li>
             <li>
-              <a href="/">Products</a>
+              <Link to='/products' >Products</Link>
             </li>
           </ul>
         </div>

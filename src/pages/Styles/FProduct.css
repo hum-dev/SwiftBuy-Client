@@ -6,7 +6,8 @@ font-size: 30px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
-   
+   border-bottom: 1px solid var(--color-blue-light);
+   width: 20rem;
   }
   .featured-products{
     /* margin-top: 2rem; */
@@ -59,7 +60,7 @@ line-height: normal;
     font-weight: 600;
   }
     .pro-text p{
-        font-size: 15px;
+        font-size: 10px;
         font-style: normal;
         font-weight: 400;
     }
@@ -83,7 +84,7 @@ line-height: normal;
         font-size: 15px;
         font-style: normal;
         font-weight: 500;
-        margin-left: -3rem;
+       margin: 0 ;
     }
   h3, p, .price {
     margin-bottom: 1px;
@@ -93,7 +94,7 @@ line-height: normal;
     background-color: var(--color-blue-light);
     color: white;
     border: none;
-    padding: 3px 8px;
+    padding: 3px 4px;
     font-size: 15px;
     border-radius: 50%;
     cursor: pointer;

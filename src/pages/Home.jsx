@@ -13,7 +13,7 @@ function Home() {
           <div className='home-left'>
           <h1>Shop Smart Shop Swiftly!</h1>
           <p className='home-desc'> 
-              Shopping made mor convenient for youGet What You Need, Fast and Hassle-Free <br />
+              Shopping made more convenient for youGet What You Need, Fast and Hassle-Free <br />
               <span>Swift-Buy:</span>  Where Convenience Meets Quality
           </p>
           <button className='home-btn'>Explore Now &nbsp;  &#8594;</button>

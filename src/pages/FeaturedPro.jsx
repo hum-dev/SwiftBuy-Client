@@ -1,5 +1,6 @@
 import './Styles/FProduct.css'
 import img from '../assets/images/handbag.png'
+import ProductCard from './ProductCard';
 
 function FeaturedPro() {
   const products = [
@@ -12,63 +13,63 @@ function FeaturedPro() {
     },
     {
       id: 2,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 3,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 4,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 5,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 6,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 7,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 8,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 9,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
     },
     {
       id: 10,
-      image: 'product2.jpg',
+      image: img,
       name: 'Product 2',
       description: 'Description of Product 2',
       price: '14.99'
@@ -82,17 +83,7 @@ function FeaturedPro() {
       <h2>Featured Products</h2>
       <div className="product-container">
         {products.map(product => (
-          <div className="product-card" key={product.id}>
-            <img src={product.image} alt={product.name} />
-            <div className='pro-text'>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            </div>
-            <div className='pro-text-btm'>
-            <span className="price"> {product.price}</span><p>Ksh</p>
-            <button className="add-to-cart">+</button>
-            </div>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
 

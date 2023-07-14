@@ -1,4 +1,6 @@
 .navbar {
+    position: fixed;
+    margin: 0;
     margin-top: 0;
     display: flex;
     align-items: center;
@@ -20,6 +22,7 @@
 }
 .logo {
     width: 5rem;
+    margin-left: 1rem;
 }
 .navbar-right {
     width: 60%;
@@ -92,7 +95,7 @@
 
 .cart-counter {
     position: absolute;
-    top: 7px;
+    top: 1px;
     right: 0px;
     width: .6rem;
     height: .6rem;
