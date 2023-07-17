@@ -33,7 +33,7 @@ function SignUp() {
   });
 
   const SendDataToServer = async (data) => {
-    const response = await fetch(`${apiDomain}auth/register`, {
+    const response = await fetch(`${apiDomain}/auth/register`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

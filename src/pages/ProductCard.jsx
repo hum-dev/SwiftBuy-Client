@@ -1,27 +1,22 @@
 import './Styles/ProductCard.css'
-import ProductDetails from './ProductsDetails'
-import { useState } from 'react';
+// import ProductDetails from './ProductsDetails'
 import { IoIosAddCircle } from 'react-icons/io'
-
+import {Link, useNavigate} from 'react-router-dom'
 import PropTypes from 'prop-types';
 
-
-
 const ProductCard = ({product}) => {
-    const { image, name, description, price } = product;   
-    const [isHidden, setIsHidden] = useState(false);
+    const navigate = useNavigate()
 
-    const handleDetailClose = () => {
-        setIsHidden(false);
-    };
+    const {id, image, name, description, price } = product;   
     
-      const handleProductClick = () => {
-        setIsHidden(true);
+    const handleProductClick = () => {
+        navigate('/productDetails')
       };
 
     return (
         <>
-            <div className="product-page-card" onClick={handleProductClick}>
+        <Link to={'/productDetails'}>
+        <div className="product-page-card" onClick={handleProductClick}>
                 <img src={image} alt={name} />
                 <div className='pro-text'>
                 <h3>{name}</h3>
@@ -32,14 +27,12 @@ const ProductCard = ({product}) => {
                 <button className="add-to-cart"><IoIosAddCircle /></button>
                 </div>
             </div>
-            {isHidden && (
-                <ProductDetails
-                product={product}
-                onClose={handleDetailClose}
-                />
-      )}
-        </>
+        </Link>
 
+            {/* <ProductDetails
+                product={product}
+            /> */}
+        </>
     );
 };
 

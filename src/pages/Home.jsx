@@ -2,6 +2,7 @@ import FeaturedPro from './FeaturedPro'
 import LatestPro from './LatestPro'
 import Offers from './Offers'
 import './Styles/Home.css'
+import {Link} from 'react-router-dom'
 import shop from '../assets/images/shop.png'
 
 
@@ -16,7 +17,7 @@ function Home() {
               Shopping made more convenient for youGet What You Need, Fast and Hassle-Free <br />
               <span>Swift-Buy:</span>  Where Convenience Meets Quality
           </p>
-          <button className='home-btn'>Explore Now &nbsp;  &#8594;</button>
+        <Link to="/signUp"> <button className='home-btn'>Explore Now &nbsp;  &#8594;</button></Link> 
           </div>
           <div className='home-right'>
             <img src={shop} alt="shop" />

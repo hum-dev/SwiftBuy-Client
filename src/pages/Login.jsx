@@ -27,11 +27,11 @@ function Login() {
     resolver: yupResolver(Schema),
   });
   const SendDataToServer = async (data) => {
-    Axios.post(`${apiDomain}auth/login`, data)
+    Axios.post(`${apiDomain}/auth/login`, data)
     .then(({data}) => {
       if(data.token) {
         // dispatch({type: "LOGIN_SUCCESS", payload: data})
-        navigate('/Home')
+        
 
       }
     })
@@ -40,6 +40,7 @@ function Login() {
       toast.error(error);
     });
     toast.success("Logged in successfully");
+    navigate('/')
   
   };
   return (

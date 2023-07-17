@@ -1,5 +1,6 @@
 import './Styles/LProducts.css'
 // import img from '../assets/images/handbag.png'
+import ProductCard from './ProductCard';
 import img2 from '../assets/images/converse.png'
 function LatestPro() {
   const products = [
@@ -82,19 +83,9 @@ function LatestPro() {
       <h2>Latest Products</h2>
       <div className="product-container">
         {products.map(product => (
-          <div className="product-card" key={product.id}>
-            <img src={product.image} alt={product.name} />
-            <div className='pro-text'>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            </div>
-            <div className='pro-text-btm'>
-            <span className="price"> {product.price}</span><p>Ksh</p>
-            <button className="add-to-cart">+</button>
-            </div>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
-      </div>
+    </div>
 
     </div>
   );

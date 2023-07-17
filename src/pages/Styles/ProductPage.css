@@ -48,12 +48,16 @@
   }
   
   .product-page-card button {
-    background-color: var(--color-blue-light);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
+ background-color: var(--color-blue-light);
+ color: white;
+ border: none;
+ padding: 3px 4px;
+ font-size: 15px;
+ border-radius: 50%;
+ cursor: pointer;
+ width: 22px;
+height: 22px;
+flex-shrink: 0;
   }
   
   .product-page-card button:hover {

@@ -20,6 +20,7 @@ line-height: normal;
   .product-container {
     display: flex;
     overflow-x: scroll;
+    gap: 2rem;
   }
   
   .product-container::-webkit-scrollbar {
