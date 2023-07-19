@@ -4,10 +4,16 @@ import App from './App.jsx'
 import { ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './index.css'
+import { ContextProvider } from './components/Context/userContext/Context.jsx'
+import {UiContextProvider} from './components/Context/ProfileContext/ProfileContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ContextProvider>
+    <UiContextProvider>
     <App />
+    </UiContextProvider>
     <ToastContainer />
+    </ContextProvider>
   </React.StrictMode>,
 )

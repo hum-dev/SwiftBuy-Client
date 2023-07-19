@@ -36,11 +36,11 @@ function MainNav() {
         </div>
         <div className='navbar-right-icons'>
           <div className='navbar-right-icons-cart'>
-              <IoCartOutline className='cart-icon' />
+             <Link to="/checkout"> <IoCartOutline className='cart-icon' /></Link>
               <span className="cart-counter">0</span>
           </div>
           <div className='navbar-right-icons-user'>
-              <CgProfile className='user-icon' />
+           <Link to="/profile">   <CgProfile className='user-icon' /> </Link>
           </div>
         </div>
       </div>

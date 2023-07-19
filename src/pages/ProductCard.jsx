@@ -7,15 +7,15 @@ import PropTypes from 'prop-types';
 const ProductCard = ({product}) => {
     const navigate = useNavigate()
 
-    const {id, image, name, description, price } = product;   
+    const { image, name, description, price } = product;   
     
     const handleProductClick = () => {
-        navigate('/productDetails')
+        navigate('/product:/id')
       };
 
     return (
         <>
-        <Link to={'/productDetails'}>
+        <Link to={'product/${product.id}'}>
         <div className="product-page-card" onClick={handleProductClick}>
                 <img src={image} alt={name} />
                 <div className='pro-text'>

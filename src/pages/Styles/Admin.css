@@ -1,0 +1,13 @@
+.view_user {
+    display: flex;
+    width:100%;
+    
+   /* align-items: center;  */
+   
+}
+
+.data{
+    flex: 2;
+   margin-right: 20rem;
+   
+}

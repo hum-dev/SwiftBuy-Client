@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MainNav from './components/MainNav'
-// import NavHero from './components/NavHero'
+import NavHero from './components/NavHero'
+import { useContext } from 'react'
+import {Context} from './components/Context/userContext/Context.jsx'
 import './App.css'
 import Home from './pages/Home'
 import Footer from './components/Footer'
@@ -17,16 +19,25 @@ import CheckOut from './pages/CheckOut'
 import Delivery from './pages/Delivery'
 import Payments from './pages/Payments'
 import Profile from './pages/Profile'
+import NotFound from './pages/NotFound'
+import ViewUser from './pages/ViewUser'
+import ProductList from './pages/ProductList'
+import AddProduct from './pages/AddProduct'
+import OrderList from './pages/OrderList'
 
 
 
 function App() {
-
+  const {user} = useContext(Context)
 
   return (
-    <>
+    
       <BrowserRouter>
-      <MainNav />
+      <>
+      {
+        user ? <MainNav /> : <NavHero/>
+      }
+     
       {/* <NavHero /> */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,7 +46,7 @@ function App() {
           <Route path="/latest" element={<LatestPro /> } />
           <Route path="/login" element={<Login /> } />
           <Route path="/signUp" element={<SignUp /> } />
-          <Route path="/admin" element={<Admin />} />
+          
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/details" element={<ProductsDetails />} />
           <Route path="/order" element={<Orders/>} />
@@ -43,13 +54,22 @@ function App() {
           <Route path="/delivery" element={<Delivery/>} />
           <Route path="/payment" element={<Payments/>} />
           <Route path="/profile" element={<Profile/>} />
-          <Route path="/productDetails" element={<ProductsDetails/>} />
+          <Route path="/product/:id" element={<ProductsDetails/>} />
+          <Route path="*" element={<NotFound/>} />
+
+          <Route path="/admin" element={<Admin />} >
+            <Route path="viewuser" element={<ViewUser/>} />
+            <Route path="productList" element={<ProductList/>} />
+            <Route path="addProduct" element={<AddProduct/>} />
+            <Route path="orderList" element={<OrderList/>} />
+            </Route>
 
         </Routes>
         <Footer />
+        </>
       </BrowserRouter>
 
-    </>
+    
   )
 }
 

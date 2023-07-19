@@ -1,0 +1,12 @@
+.admin-container {
+    width: 300px;
+    margin-top:  5rem;
+    padding: 20px;
+    background-color: var(--color-primary);
+   
+  }
+  
+  .menu {
+    background-color:var(--color-secondary-dark);
+    color: var( --color-blue-dark);
+  }

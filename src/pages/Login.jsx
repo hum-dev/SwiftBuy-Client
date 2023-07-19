@@ -7,8 +7,12 @@ import Axios from 'axios'
 import { useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { useContext } from 'react'
+import {Context} from '../components/Context/userContext/Context'
 
 function Login() {
+  const {user, dispatch} = useContext(Context)
+  console.log(user)
   const navigate = useNavigate()
   const Schema = yup.object().shape({
     username: yup.string().required("Username is required"),
@@ -30,7 +34,7 @@ function Login() {
     Axios.post(`${apiDomain}/auth/login`, data)
     .then(({data}) => {
       if(data.token) {
-        // dispatch({type: "LOGIN_SUCCESS", payload: data})
+        dispatch({type: "LOGIN_SUCCESS", payload: data})
         
 
       }
@@ -41,8 +45,8 @@ function Login() {
     });
     toast.success("Logged in successfully");
     navigate('/')
-  
   };
+  
   return (
     <div>
       <section className='form-bg'>
