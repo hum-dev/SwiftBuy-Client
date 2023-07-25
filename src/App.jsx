@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MainNav from './components/MainNav'
 import NavHero from './components/NavHero'
-import { useContext } from 'react'
-import {Context} from './components/Context/userContext/Context.jsx'
+
 import './App.css'
 import Home from './pages/Home'
 import Footer from './components/Footer'
@@ -24,18 +23,21 @@ import ViewUser from './pages/ViewUser'
 import ProductList from './pages/ProductList'
 import AddProduct from './pages/AddProduct'
 import OrderList from './pages/OrderList'
+import { useSelector } from 'react-redux'
 
 
 
 function App() {
-  const {user} = useContext(Context)
+ // const {user} = useContext(Context)
+  const userVal = useSelector(state => state.user.user);
+  console.log(userVal);
 
   return (
     
       <BrowserRouter>
       <>
       {
-        user ? <MainNav /> : <NavHero/>
+        userVal ? <MainNav /> : <NavHero/>
       }
      
       {/* <NavHero /> */}

@@ -5,10 +5,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import { apiDomain } from '../utils';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../redux/ApiCalls.js';
 
 function SignUp() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const Schema = yup.object().shape({
     username: yup.string().required("Username is required"),
     password: yup
@@ -33,24 +36,19 @@ function SignUp() {
   });
 
   const SendDataToServer = async (data) => {
-    const response = await fetch(`${apiDomain}/auth/register`, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      }
-    })
-    if (response.status === 200) {
-      toast.success("Account created successfully");
-      navigate('/login')
-    } else {
+    console.log(data);
+    navigate('/login');
+    const { userName, email, password } = data;
+
+    try {
+      await registerUser(dispatch, { userName, email, password } );
+      console.log({ userName, email, password })
+      // toast.success('User registered successfully', 'signup-success')
+    } catch (err) {
       toast.error("Account creation failed");
+      console.log(err);
     }
 
-
-   
- 
-    
 
   };
 

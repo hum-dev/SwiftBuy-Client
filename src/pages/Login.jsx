@@ -2,17 +2,16 @@ import './Styles/Login.css'
 import {Link, useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import {apiDomain} from '../utils'
-import Axios from 'axios'
+
+
 import { useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import { useContext } from 'react'
-import {Context} from '../components/Context/userContext/Context'
-
+// import { useContext } from 'react'
+import { loginUser } from '../redux/ApiCalls.js';
+import { useDispatch } from 'react-redux';
 function Login() {
-  const {user, dispatch} = useContext(Context)
-  console.log(user)
+  const dispatch = useDispatch();
   const navigate = useNavigate()
   const Schema = yup.object().shape({
     username: yup.string().required("Username is required"),
@@ -30,21 +29,18 @@ function Login() {
   } = useForm({
     resolver: yupResolver(Schema),
   });
-  const SendDataToServer = async (data) => {
-    Axios.post(`${apiDomain}/auth/login`, data)
-    .then(({data}) => {
-      if(data.token) {
-        dispatch({type: "LOGIN_SUCCESS", payload: data})
-        
 
-      }
-    })
-    .catch(({response}) => {
-      const error = response.data.message;
-      toast.error(error);
-    });
-    toast.success("Logged in successfully");
-    navigate('/')
+  const SendDataToServer = async (data) => {
+    console.log(data);
+    const success = await loginUser(dispatch, data);
+    if (data.token) {
+      localStorage.setItem("user", JSON.stringify(data));
+    }
+    console.log(success);
+    if (success) {
+      toast.success("Login Successful");
+      navigate('/');
+    }
   };
   
   return (
