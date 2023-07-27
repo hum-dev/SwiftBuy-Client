@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--color-blue-dark);
+  background-color: #7dbbf4;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,7 +28,9 @@
 #root {
   max-width: 1380px;
   margin: 0 auto;
+  
 }
+
 
 
 body {
@@ -40,4 +42,8 @@ body {
   /* min-height: 100vh; */
 }
 
+body a {
+  text-decoration: none;
+  
+}
 

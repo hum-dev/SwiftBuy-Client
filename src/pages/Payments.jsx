@@ -3,7 +3,7 @@ import './Styles/Payment.css'
 function Payments() {
   return (
     <div>
-      Payments
+     
     </div>
   )
 }

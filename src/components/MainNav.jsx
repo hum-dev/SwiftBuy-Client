@@ -4,8 +4,12 @@ import { IoCartOutline } from 'react-icons/io5'
 import { CgProfile } from 'react-icons/cg'
 import logo from '../assets/images/swift-buy logo.png'
 import {Link} from 'react-router-dom'
+// import { useRef, useState } from "react";
+import { useSelector } from "react-redux";
 
 function MainNav() {
+
+  const { cartTotalQuantity } = useSelector((state) => state.cart);
   return (
     <div className='navbar'>
       <div className='navbar-left'>
@@ -23,12 +27,7 @@ function MainNav() {
             <li>
               <a href="/">Home</a>
             </li>
-            <li>
-              <a href="/">About</a>
-            </li>
-            <li>
-              <a href="/">Contact</a>
-            </li>
+
             <li>
               <Link to='/products' >Products</Link>
             </li>
@@ -37,7 +36,7 @@ function MainNav() {
         <div className='navbar-right-icons'>
           <div className='navbar-right-icons-cart'>
              <Link to="/checkout"> <IoCartOutline className='cart-icon' /></Link>
-              <span className="cart-counter">0</span>
+              <span className="cart-counter">{cartTotalQuantity}</span>
           </div>
           <div className='navbar-right-icons-user'>
            <Link to="/profile">   <CgProfile className='user-icon' /> </Link>
