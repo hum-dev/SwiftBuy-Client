@@ -6,13 +6,14 @@ import PropTypes from 'prop-types';
 // import  { useEffect } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { getProducts } from '../redux/ApiCalls.js';
-import getProductImage from '../image.js';
+import img from '../assets/images/hoodie.png'
+// import getProductImage from '../image.js';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/CartSlice';
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch()
-    const {  name, description, price, productName } = product;
+    const {  name, description, price } = product;
 
     const handleAddToCart = (product) => {
         dispatch(addToCart(product))
@@ -25,7 +26,7 @@ const ProductCard = ({ product }) => {
             
                 <div className="product-page-card">
                     <div className="image">
-                        <img src={getProductImage(productName)} alt="product" />
+                        <img src={img} alt="product" />
                     </div>
 
                     <div className='pro-text'>

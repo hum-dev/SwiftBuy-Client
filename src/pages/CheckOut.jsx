@@ -1,5 +1,7 @@
 import './Styles/CheckOut.css'
 import { useEffect } from 'react';
+import axios from 'axios';
+import { apiDomain } from '../utils';
 
 // import PropTypes from 'prop-types';
 import getProductImage from '../image.js';
@@ -11,7 +13,9 @@ import { FaArrowLeft } from 'react-icons/fa';
 const CheckOut = () => {
 
   const cart = useSelector(state => state.cart);
+  const user = useSelector((state) => state.user.user);
   console.log("cart:", cart)
+  const userId = user.id;
 
   const dispatch = useDispatch()
 
@@ -31,6 +35,22 @@ const handleRemoveFromCart = (product) => {
 const handleClearCart = () => {
     dispatch(clearCart(''));
 };
+
+const handleCheckout = () => {
+  axios.post(`${apiDomain}/stripe`,
+      {
+          userId: userId,
+          cartItems: cart.cartItems
+      }).then((res) => {
+          if (res.data.url) {
+              window.location.href = res.data.url
+          }
+      }).catch((error => {
+          console.log(error)
+      }))
+  console.log("checkout")
+}
+
   return (
     <>
       <div className='cart-page'>
@@ -43,7 +63,7 @@ const handleClearCart = () => {
               <div className="start-shopping">
                 <Link to="/products">
                   <FaArrowLeft className="arrow-icon" />
-                  <button>Start Shopping</button>
+                  <button>Go Shopping</button>
                 </Link>
               </div>
             </div>
@@ -82,11 +102,11 @@ const handleClearCart = () => {
                   <div className="subtotal">
      
                    
-                    <button>Check Out</button>
+                    <button onClick={() => handleCheckout()}>Check Out</button>
                     <div className="continue-shopping">
                       <Link to="/products">
                         <FaArrowLeft className="arrow-icon" />
-                        <button>Continue Shopping</button>
+                        <button>Go Shopping</button>
                       </Link>
                     </div>
                   </div>

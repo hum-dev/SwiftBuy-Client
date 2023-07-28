@@ -3,6 +3,7 @@ import Loading from "../../components/loading/Loading";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {fetchOrder} from "../../actions/orders";
+import PropTypes from 'prop-types';
 
 const Success = ({setCart}) => {
 
@@ -26,5 +27,11 @@ const Success = ({setCart}) => {
 
     return <Loading text={'Processing'}/>
 }
+
+Success.propTypes = {
+    setCart: PropTypes.func.isRequired,
+};
+
+
 
 export default Success;
